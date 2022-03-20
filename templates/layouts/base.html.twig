@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    {% block stylesheets %}
+      {{ encore_entry_link_tags('app') }}
+    {% endblock %}
+    {% block javascripts %}
+      {{ encore_entry_script_tags('app') }}
+    {% endblock %}
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Swiper  -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
+
+    {% block title %}<title>Hello, world!</title>{% endblock %}
+  </head>
+  <body>
+    {% block body %}
+    <div class="app" id="app">
+      <div class="container-lg col-12">
+
+
+        <header class="site-header">
+          <a href="/" class="site-title">Блог</a>
+          <p class="site-info">Интересные статьи на самые разные темы</p>
+        </header>
+
+
+        <nav class="navbar site-navbar navbar-expand-lg navbar-light">
+          <div class="container-fluid">
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link text-light" aria-current="page" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-light" href="#">Link</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Dropdown
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" href="#">Action</a></li>
+                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                  </ul>
+                </li>
+                <!-- <li class="nav-item">
+                  <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                </li> -->
+              </ul>
+              
+            </div>
+          </div>
+        </nav>
+
+        <div class="search-block-mobile d-lg-none col-12">
+          <form action="">
+            <input type="text" class="search__input col-11">
+            <button class="search__button col-1"><i class="fas fa-search"></i></button>
+          </form>
+        </div>
+
+        <div id="content" class="site-content">
+          <div class="row">
+            {% block content %} {% endblock %}
+
+
+            <aside class="right-sidebar d-none d-lg-block">
+              <div class="search-block">
+                <form action="">
+                  <input type="text" class="search__input col-11">
+                  <button class="search__button col-1"><i class="fas fa-search"></i></button>
+                </form>
+              </div>
+
+              <div class="article-categories col-11">
+                <div class="article-categories__title">Рубрики блога</div>
+
+                <div class="article-categories__list">
+                  <ul class="article-categories__list">
+                    <li class="article-categories__item"> <i class="fas fa-angle-right"></i> <a href="#">Жизнь</a> </li>
+                    <li class="article-categories__item"> <i class="fas fa-angle-right"></i> <a href="#">Жизнь</a> </li>
+                    <li class="article-categories__item"> <i class="fas fa-angle-right"></i> <a href="#">Жизнь</a> </li>
+                    <li class="article-categories__item"> <i class="fas fa-angle-right"></i> <a href="#">Жизнь</a> </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="article-recommendations">
+                <div class="recommendations__title">Рекомендуем</div>
+                <div class="recommendations__article">
+                  <div class="recommendations__image"><img src="https://root.wpshop.tech/wp-content/uploads/2017/01/thumb-big-1170-500-9.jpg" class="col-12" alt=""></div>
+                    
+                  <div class="recommendations__article-title"><a href="#">Статья без сайдбара</a></div>
+                  <div class="recommendations__info-block">
+                    <div class="row">
+                      <div class="col-6"><a style="color:#999"href="#">Жизнь</a></div>
+                      <div class="col-2"> <i class="fas fa-comment"></i> 6</div>
+                      <div class="col-4"> <i class="fas fa-eye"></i> 12999</div>
+                    </div>
+                  </div>
+              </div>
+
+              <div class="recommendations__article">
+                  <div class="recommendations__image"><img src="https://root.wpshop.tech/wp-content/uploads/2017/01/thumb-big-1170-500-9.jpg" class="col-12" alt=""></div>
+                    
+                  <div class="recommendations__article-title"><a href="#">Статья без сайдбара</a></div>
+                  <div class="recommendations__info-block">
+                    <div class="row">
+                      <div class="col-6"><a style="color:#999"href="#">Жизнь</a></div>
+                      <div class="col-2"> <i class="fas fa-comment"></i> 6</div>
+                      <div class="col-4"> <i class="fas fa-eye"></i> 12999</div>
+                    </div>
+                  </div>
+              </div>
+
+              <div class="recommendations__article">
+                  <div class="recommendations__image"><img src="https://root.wpshop.tech/wp-content/uploads/2017/01/thumb-big-1170-500-9.jpg" class="col-12" alt=""></div>
+                    
+                  <div class="recommendations__article-title"><a href="#">Статья без сайдбара</a></div>
+                  <div class="recommendations__info-block">
+                    <div class="row">
+                      <div class="col-6"><a style="color:#999"href="#">Жизнь</a></div>
+                      <div class="col-2"> <i class="fas fa-comment"></i> 6</div>
+                      <div class="col-4"> <i class="fas fa-eye"></i> 12999</div>
+                    </div>
+                  </div>
+              </div>
+
+
+
+
+              </div>
+
+              <div class="new-articles col-11">
+                <div class="new-articles__title">Свежие записи</div>
+                <div class="new-articles__content">
+                  <div class="new-articles__item">
+                      <div class="new-article__image"><img src="https://root.wpshop.tech/wp-content/uploads/2017/01/thumb-big-1170-500-7.jpg" class="col-12" alt=""></div>
+                      <div class="new-article__title"><a href="#">Запись с видео</a></div>
+                      <div class="new-article__info">
+                        <div class="row">
+                          <div class="new-article__category col-6"><a href="#">Новости</a></div>
+                          <div class="col-2"><i class="fas fa-comment"></i> 5</div>
+                          <div class="col-4"><i class="fas fa-eye"></i> 1233</div>
+                        </div>
+                      </div>
+                    
+                    </div>
+
+                    <div class="new-articles__item">
+                      <div class="new-article__image"><img src="https://root.wpshop.tech/wp-content/uploads/2017/01/thumb-big-1170-500-7.jpg" class="col-12" alt=""></div>
+                      <div class="new-article__title"><a href="#">Запись с видео</a></div>
+                      <div class="new-article__info">
+                        <div class="row">
+                          <div class="new-article__category col-6"><a href="#">Новости</a></div>
+                          <div class="col-2"><i class="fas fa-comment"></i> 5</div>
+                          <div class="col-4"><i class="fas fa-eye"></i> 1233</div>
+                        </div>
+                      </div>
+                    
+                    </div>
+
+                    <div class="new-articles__item">
+                      <div class="new-article__image"><img src="https://root.wpshop.tech/wp-content/uploads/2017/01/thumb-big-1170-500-7.jpg" class="col-12" alt=""></div>
+                      <div class="new-article__title"><a href="#">Запись с видео</a></div>
+                      <div class="new-article__info">
+                        <div class="row">
+                          <div class="new-article__category col-6"><a href="#">Новости</a></div>
+                          <div class="col-2"><i class="fas fa-comment"></i> 5</div>
+                          <div class="col-4"><i class="fas fa-eye"></i> 1233</div>
+                        </div>
+                      </div>
+                    
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+
+            </aside>
+
+            
+          </div>
+
+          <footer class="text-center">
+              <div>© 2022 Обо все на свете.</div>
+                <div class="row d-flex justify-content-center">
+                  <a href="#" class="col-4">Политика конфедициальности</a>
+                  <a href="#" class="col-4">Пользовательское соглашение</a>
+              </div>
+              <div class="text-center" style="font-size: 10px">Информация на сайте предоставлена исключительно в популярно-ознакомительных целях, не претендует на справочную и медицинскую точность, не является руководством к действию. Не занимайтесь самолечением. Проконсультируйтесь со своим лечащим врачом. Руководство сайта не несет ответственности за использование размещенной на сайте информации.</div>
+            </footer>
+         
+        </div>
+
+
+      </div>
+      {% endblock %}
+    </div>
+    
+
+
+    <!-- Swiper -->
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+
+
+
+
+<script>
+  const swiper = new Swiper('.swiper', {
+    speed: 400,
+    spaceBetween: 100,
+    navigation: { // задаем кнопки навигации
+            nextEl: '.swiper-button-next', // кнопка Next
+            prevEl: '.swiper-button-prev' // кнопка Prev
+        },
+    loop: true,
+    pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+    },
+    autoheight: true,
+    autoplay: {
+      delay: 3000,
+    },
+  });
+  
+</script>
+
+  </body>
+</html>

@@ -1,0 +1,80 @@
+{% extends 'layouts/base.html.twig' %}
+
+{% block content %}
+
+<main id="main" class="site-main">
+    <div class="slider">
+
+        <div class="swiper">
+
+            <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <div style="background-image: url(https://root.wpshop.tech/wp-content/uploads/2017/01/thumb-big-1170-500-4.jpg);min-height:300px" class="col-12 swiper__slide"></div>
+                <div class="slide-text">
+                <h3>Статья с ссылкой на источник</h3>
+                <p class="d-md-block d-none">В конце этой статьи есть ссылка на источник. Ссылка может быть закрыта через js </p>
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <div style="background-image: url(https://root.wpshop.tech/wp-content/uploads/2017/01/thumb-big-1170-500-4.jpg);min-height:300px" class="col-12 swiper__slide"></div>
+                <div class="slide-text">
+                <h3>Статья с ссылкой на источник</h3>
+                <p class="d-md-block d-none">В конце этой статьи есть ссылка на источник. Ссылка может быть закрыта через js </p>
+                </div>
+            </div>
+
+
+            <div class="swiper-slide">
+                <div style="background-image: url(https://root.wpshop.tech/wp-content/uploads/2017/01/thumb-big-1170-500-4.jpg);min-height:300px" class="col-12 swiper__slide"></div>
+                <div class="slide-text">
+                <h3>Статья с ссылкой на источник</h3>
+                <p class="d-md-block d-none">В конце этой статьи есть ссылка на источник. Ссылка может быть закрыта через js </p>
+                </div>
+            </div>
+
+
+            </div>
+        
+            
+
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-pagination"></div>
+        
+
+        </div>
+    </div>
+
+    <div class="articles-container">
+
+        {% for article in articles %}
+        <article class="article-card">
+            <div class="article-card__title"><a href="#">{{article.getName()}}</a></div>
+            <div class="article-card__info-block col-12 text-secondary">
+            <p class="article-card__date col-md-2 col-3">{{article.getCreatedAt().format('d.m.Y')}}</p>
+            <p class="article-card__category col-5 col-md-8"><span class="d-md-inline d-none col-2">Рубрика:</span> <a class="article-card__category-name">Жизнь</a></p>
+            <p class="article-card__comments-count"> <i class="fas fa-comment"></i> {{article.getComments()}}</p>
+            <p class="article-card__views-count"> <i class="fas fa-eye"></i> {{article.getViews()}}</p>
+            </div>
+            <div class="article-card__content">
+            
+            <div class="article-card__image">
+                <img src="https://root.wpshop.tech/wp-content/uploads/2016/06/thumb-big-1170-500.jpg" class="col-12" alt="Article Image">
+            </div>
+            <div class="article-card__text col-9 col-lg-12">
+                <span>{{article.getDescription()}}</span>
+                <a href="#" class="article-card__continue-reading-button">Читать полностью</a>
+            </div>
+
+            </div>
+
+        </article>
+        {% endfor %}
+        
+    </div>              
+    
+</main>
+
+
+{% endblock %}
